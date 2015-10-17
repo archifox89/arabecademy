@@ -1,0 +1,14 @@
+<div class="section1">
+	<div id="main-image">
+		<%= image_tag("cloud-5.jpg") %>
+	</div>
+</div>
+
+<section class="not-fullscreen">
+    <div class="content-a">
+        <div class="content-b">
+            Centered content
+        </div>
+    </div>
+</section>
+
