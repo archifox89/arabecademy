@@ -1,0 +1,81 @@
+$orange: #ca5c34;
+
+#background {
+	background-image: url(first-image2.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+	.nav_color {
+		background-color: rgba(0,0,0,0.3);
+		border-bottom-style: solid;
+		border-color: $orange;
+		border-width: 4px;
+		padding: 0 0 2rem 0;
+		header {
+			z-index: 2;
+			position: relative;
+			padding: 2rem;
+			#logo {
+				float: left;
+				color: white;
+				font-weight: 700;
+				font-decoration: none;
+				transition: background .2s ease-in-out;
+			}
+			nav {
+				float: right;
+				ul {
+					list-style: none;
+					margin: 0;
+					li {
+						display: inline;
+						margin-left: 2.5rem;
+						a {
+							color: white;
+							text-decoration: none;
+						}
+						#sign_in {
+							background: $orange;
+							padding: 1rem 2rem 1rem 2rem;
+							border-radius: 3rem;
+							transition: background .2s ease-in-out;
+							&:hover {
+								background: darken($orange, 7.5%);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	h1 {
+		margin: 4rem 0 2rem 0;
+		color: white;
+		letter-spacing: 1px;
+		line-height: 1.2;
+		font-size: 3.5rem;
+		font-weight: 500;
+	}
+	h2 {
+		color: white;
+		font-size: 1.7rem
+	}
+	h2 a {
+		color: white;
+		text-decoration: underline;
+		letter-spacing: 1px;
+	}
+	iframe {
+		display: block;
+		margin: 4rem auto;
+
+	}
+		a:hover  {
+		text-decoration: none;
+		color: white;
+	}
+	.button {
+		margin: 1rem 1.5% 0 1.5%;
+	}
+}

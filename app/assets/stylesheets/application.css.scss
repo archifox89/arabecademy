@@ -13,6 +13,12 @@
  *= require_tree .
  *= require_self
  *= require my_stylings
- *= require new-pages
  *= require pages
+ *= require home
+ *= require normalize
  */
+
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}

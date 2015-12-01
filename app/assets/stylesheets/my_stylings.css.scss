@@ -1,3 +1,59 @@
+$orange: #ca5c34;
+$blue: #05785e;
+
+
+.wrapper_wide {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.wrapper_skinny {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.cf:before, .cf:after {
+	content: " ";
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+.button {
+	color: white;
+	text-decoration: none;
+	font-size: 1.7rem;
+	padding: 1.2rem 2rem;
+	border-radius: 3rem;
+	outline: none;
+	border: none;
+	display: inline-block;
+	min-width: 17rem;
+}
+
+.button_orange {
+	background: $orange;
+	transition: background .2s ease-in-out;
+	&:hover {
+		background: darken($orange, 7.5%);
+	}
+}
+
+.button_blue {
+	background: $blue;
+	transition: background .2s ease-in-out;
+	&:hover {
+		background: darken($blue, 7.5%);
+	}
+}
+
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
