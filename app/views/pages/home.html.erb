@@ -1,14 +1,30 @@
 <div id="background">
   <div class="nav_color">
-    <div class="wrapper_wide">
-      <header class:"cf">
+    <div class="wrapper">
+      <header class="cf">
         <a href="#" id="logo">arabecademy</a>
         <nav>
           <ul>
-            <li><a href="#">Courses</a></li>
+            <li>
+              <%= link_to "#" do %>
+                Grade<span class="glyphicon glyphicon-chevron-down"></span>
+              <% end %>
+              <ul>
+                <li>Grade 9</li>
+                <li><%= link_to "Grade 10", pages_grade10_path %></li>
+                <li>Grade 11</li>
+                <li>Grade 12</li>
+              </ul>
+            </li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#" id="sign_in">Sign In</a></li>
+            <% if student_signed_in? %>
+            <li><%= link_to "Log Out", destroy_student_session_path, method: :delete %></li>
+            <li><%= link_to "Accout Settings", edit_student_registration_path %></li>
+            <% else %>
+            <li><%= link_to "Log in", new_student_session_path %></li>
+            <li><%= link_to "Sign Up", new_student_registration_path, :class => "button_sm button_orange" %></li>
+            <% end %>
           </ul>
         </nav>
       </header>
@@ -16,9 +32,30 @@
   </div>
   <div class="wrapper_skinny">
     <h1>Helping Students All Over Kuwait to<br> Achieve their Full Academic Potential</h1>
-    <h2><a href="#">Sign up</a> now to get access to your free chapter</h2>
+    <h2><a href="#">Sign up</a> now to get access to your <i>free chapter</i></h2>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/tUAsE4ilOok" frameborder="0" allowfullscreen></iframe>
-    <a href="#" class="button button_orange">View Courses</a>
-    <a href="#" class="button button_blue">Learn More</a>
+<!--     <a href="#" class="button button_orange">View Courses</a>
+    <a href="#" class="button button_blue">Learn More</a> -->
+    <div id="find_course">
+      <h3>Find a Course</h3>
+      <label for="">Grade
+        <select name="grade" id="">
+          <option value="grade-9">Grade 9</option>
+          <option value="grade-10">Grade 10</option>
+          <option value="grade-11">Grade 11</option>
+          <option value="grade-12">Grade 12</option>
+        </select>
+      </label>
+      <label for="">Subject
+        <select name="subject" id="">
+          <option value="math">Math</option>
+          <option value="chemistry">Chemistry</option>
+          <option value="physics">Physics</option>
+
+        </select>
+      </label>
+      <a href="#" class="button_sm button_orange">Go</a>
+    </div>
   </div>
 </div>
+

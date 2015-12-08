@@ -1,6 +1,7 @@
-$orange: #ca5c34;
-$blue: #05785e;
-
+$orange: #05785e;
+$blue: #ca5c34;
+$dark: #222222;
+// $orange: #ca5c34;
 
 .wrapper_wide {
 	width: 90%;
@@ -26,6 +27,11 @@ $blue: #05785e;
 	clear: both;
 }
 
+.alert {
+	margin: 0 !important;
+	text-align: center;
+}
+
 .button {
 	color: white;
 	text-decoration: none;
@@ -37,6 +43,16 @@ $blue: #05785e;
 	display: inline-block;
 	min-width: 17rem;
 }
+
+.button_sm {
+	color: white !important;
+	text-decoration: none;
+	padding: 1rem 2rem 1rem 2rem;
+	border-radius: 3rem;
+	outline: none;
+	border: none;
+}
+
 
 .button_orange {
 	background: $orange;
@@ -53,6 +69,97 @@ $blue: #05785e;
 		background: darken($blue, 7.5%);
 	}
 }
+
+.main_nav_color {
+	background-color: $dark;
+	#main_header {
+	  padding: 2rem;
+	  #logo {
+	    float: left;
+	    color: white;
+	    font-weight: 700;
+	    font-decoration: none;
+	    transition: background .2s ease-in-out;
+	  }
+		nav {
+			float: right;
+			ul {
+				display: inline;
+				list-style: none;
+				margin: 0;
+				text-align: left;
+				li:hover {
+					ul {
+						display: block;
+					}
+				}
+				li {
+					display: inline-block;
+					position: relative;
+					margin-left: 2.5rem;
+				ul {
+					position: absolute;
+					margin: 0;
+					display: none;
+					background: white;
+					padding: 0;
+					width: 9rem;
+					cursor: pointer;
+
+					li:hover {
+						background: grey;
+					}
+					li {
+						display: block;
+						margin-left: 0;
+						padding: 1rem 1rem;
+						a {
+							color: black;
+						}
+						}
+					}
+					a {
+						color: white;
+						text-decoration: none;
+					}
+					.glyphicon {
+						margin-left: 0.5rem;
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.banner {
+	background-color: lighten($orange, 7%);
+			padding: 7rem 0;
+	h1 {
+		width: 20rem;
+		text-align: center;
+		margin: 0 auto;
+		padding: 2rem 2rem;
+		border-style: solid;
+		border-radius: 5rem;
+		border-width: 0.6rem;
+		border-color: white;
+		font-weight: 700;
+		font-size: 2.5rem;
+		color: white;
+		background-color: lighten($blue, 5%);
+	}
+}
+
+
+
+footer {
+	padding: 8rem 0;
+	text-align: left;
+	background: $dark;
+	color: white;
+}
+
 
 
 @import 'bootstrap-sprockets';

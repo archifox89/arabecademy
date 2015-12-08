@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   get 'pages/home'
 
-  get 'pages/courses'
+  get 'pages/grade10'
+
+  get 'pages/preview'
 
   get 'pages/about'
 

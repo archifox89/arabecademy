@@ -1,0 +1,71 @@
+$orange: #05785e;
+$blue: #ca5c34;
+$dark: #222222;
+
+.sub_nav_color {
+	background: $dark;
+	padding: 2rem;
+  ul {
+  	text-align: center;
+    list-style: none;
+    margin: 0;
+    li {
+      display: inline-block;
+      margin-left: 3rem;
+      margin-right: 3rem;
+      a {
+        color: white;
+        text-decoration: none;
+        padding-bottom: 1.5rem;
+      }
+      #active {
+		    border-bottom-style: solid;
+		    border-width: 0.6rem;
+		    border-color: red;
+      }
+    }
+  }
+}
+
+.courses {
+	margin: 4rem auto 7rem auto;
+	width: 60%;
+	overflow: hidden;
+	.semester_1 {
+		position: relative;
+		float: left;
+		width: 40%;
+		h3 {
+			margin: 0;
+			text-align: center;
+		}
+	}
+	.semester_2 {
+		float: right;
+		width: 40%;
+		h3 {
+			margin: 0;
+			text-align: center;
+		}
+	}
+}
+
+.course_list {
+			margin-top: 4rem;
+			text-align: center;
+			border-style: solid;
+			border-width: 0.1rem;
+			h3 {
+				margin: 0;
+				padding: 1rem 0;
+				background: $dark;
+				color: white;
+			}
+			p {
+				margin: 3rem 0;
+				font-size: 1.5rem;
+			}
+			.button {
+				margin-bottom: 3rem;
+			}
+		}

@@ -1,0 +1,100 @@
+
+<div class="main_nav_color">
+  <div class="wrapper">
+    <header id="main_header" class="cf">
+      <a href="#" id="logo">arabecademy</a>
+        <nav>
+          <ul>
+            <li>
+              <%= link_to "#" do %>
+                Grade<span class="glyphicon glyphicon-chevron-down"></span>
+              <% end %>
+              <ul>
+                <li>Grade 9</li>
+                <li><%= link_to "Grade 10", pages_grade10_path %></li>
+                <li>Grade 11</li>
+                <li>Grade 12</li>
+              </ul>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <% if student_signed_in? %>
+            <li><%= link_to "Log Out", destroy_student_session_path, method: :delete %></li>
+            <li><%= link_to "Accout Settings", edit_student_registration_path %></li>
+            <% else %>
+            <li><%= link_to "Log in", new_student_session_path %></li>
+            <li><%= link_to "Sign Up", new_student_registration_path, :class => "button_sm button_orange" %></li>
+            <% end %>
+          </ul>
+        </nav>
+    </header>
+  </div>
+</div>
+
+<div class="banner">
+  <h1>Grade 10</h1>
+</div>
+
+<div class="sub_nav_color">
+  <div class="wrapper">
+      <nav>
+        <ul>
+          <li><a href="#" >All</a></li>
+          <li><a href="#" id="active">Math</a></li>
+          <li><a href="#">Physics</a></li>
+          <li><a href="#">Chemistry</a></li>
+          <li><a href="#">Biology</a></li>
+          <li><a href="#">Geology</a></li>
+          <li><a href="#">English</a></li>
+          <li><a href="#">Arabic</a></li>
+        </ul>
+      </nav>
+  </div>
+</div>
+
+<div class="courses">
+  <div class="semester_1">
+    <h3>Semester 1</h3>
+    <div class="course_list">
+      <h3>Math - First Period</h3>
+      <p>Midterm exam review for first period math</p>
+      <%= link_to "View Course", pages_preview_path, :class => "button button_orange" %>
+    </div>
+    <div class="course_list">
+      <h3>Math - First Period</h3>
+      <p>Midterm exam review for first period math</p>
+      <div class="button button_orange">View Course</div>
+    </div>
+    <div class="course_list">
+      <h3>Math - First Period</h3>
+      <p>Midterm exam review for first period math</p>
+      <div class="button button_orange">View Course</div>
+    </div>
+  </div>
+  <div class="semester_2">
+    <h3>Semester 2</h3>
+    <div class="course_list">
+      <h3>Math - First Period</h3>
+      <p>Midterm exam review for first period math</p>
+      <div class="button button_orange">View Course</div>
+    </div>
+    <div class="course_list">
+      <h3>Math - First Period</h3>
+      <p>Midterm exam review for first period math</p>
+      <div class="button button_orange">View Course</div>
+    </div>
+    <div class="course_list">
+      <h3>Math - First Period</h3>
+      <p>Midterm exam review for first period math</p>
+      <div class="button button_orange">View Course</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrapper_skinny">
+    <div class="footer_content">
+      <p>Copyright arabecademy 2015</p>
+    </div>
+  </div>
+</footer>

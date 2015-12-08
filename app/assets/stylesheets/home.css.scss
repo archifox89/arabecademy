@@ -11,10 +11,7 @@ $orange: #ca5c34;
 		border-bottom-style: solid;
 		border-color: $orange;
 		border-width: 4px;
-		padding: 0 0 2rem 0;
 		header {
-			z-index: 2;
-			position: relative;
 			padding: 2rem;
 			#logo {
 				float: left;
@@ -26,23 +23,47 @@ $orange: #ca5c34;
 			nav {
 				float: right;
 				ul {
+					display: inline;
 					list-style: none;
 					margin: 0;
+					text-align: left;
+					li:hover {
+						ul {
+							display: block;
+						}
+					}
 					li {
-						display: inline;
+						display: inline-block;
+						position: relative;
 						margin-left: 2.5rem;
+					ul {
+						position: absolute;
+						margin: 0;
+						display: none;
+						background: white;
+						padding: 0;
+						width: 9rem;
+						cursor: pointer;
+
+						li:hover {
+							background: grey;
+						}
+						li {
+							display: block;
+							margin-left: 0;
+							padding: 1rem 1rem;
+							a {
+								color: black;
+							}
+							}
+						}
 						a {
 							color: white;
 							text-decoration: none;
 						}
-						#sign_in {
-							background: $orange;
-							padding: 1rem 2rem 1rem 2rem;
-							border-radius: 3rem;
-							transition: background .2s ease-in-out;
-							&:hover {
-								background: darken($orange, 7.5%);
-							}
+						.glyphicon {
+							margin-left: 0.5rem;
+							font-size: 1rem;
 						}
 					}
 				}
@@ -50,7 +71,7 @@ $orange: #ca5c34;
 		}
 	}
 	h1 {
-		margin: 4rem 0 2rem 0;
+		margin: 3rem 0 2rem 0;
 		color: white;
 		letter-spacing: 1px;
 		line-height: 1.2;
@@ -71,6 +92,26 @@ $orange: #ca5c34;
 		margin: 4rem auto;
 
 	}
+	#find_course {
+		background-color: rgba(0,0,0,0.6);
+		display: inline-block;
+		padding: 2rem 7rem 2rem 7rem;
+		border-radius: 2rem;
+		h3 {
+			margin: 0 0 2rem 0;
+			font-size: 1.6rem;
+			color: white;
+			font-weight: 700;
+
+		}
+		label {
+			color: white;
+			select {
+				color: black;
+				margin: 0 2rem 0 2rem;
+			}
+		}
+	}
 		a:hover  {
 		text-decoration: none;
 		color: white;
@@ -79,3 +120,4 @@ $orange: #ca5c34;
 		margin: 1rem 1.5% 0 1.5%;
 	}
 }
+
