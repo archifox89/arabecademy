@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  period: MyString
+  description: MyText
+  semester: MyString
+
+two:
+  title: MyString
+  period: MyString
+  description: MyText
+  semester: MyString
