@@ -1,34 +1,66 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/navbar' %>
 
-<h1>Listing Courses</h1>
+<div class="banner">
+  <h1>Grade <%= @grade.grade_number %></h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Period</th>
-      <th>Description</th>
-      <th>Semester</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="sub_nav_color">
+  <div class="wrapper">
+      <nav>
+        <ul>
+          <li><a href="#" >All</a></li>
+          <li><a href="#" id="active">Math</a></li>
+          <li><a href="#">Physics</a></li>
+          <li><a href="#">Chemistry</a></li>
+          <li><a href="#">Biology</a></li>
+          <li><a href="#">Geology</a></li>
+          <li><a href="#">English</a></li>
+          <li><a href="#">Arabic</a></li>
+        </ul>
+      </nav>
+  </div>
+</div>
 
-  <tbody>
-    <% @courses.each do |course| %>
-      <tr>
-        <td><%= course.title %></td>
-        <td><%= course.period %></td>
-        <td><%= course.description %></td>
-        <td><%= course.semester %></td>
-        <td><%= course.grade %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="courses">
+  <div class="semesters">
+    <div class="semester_1">
+      <h3>Semester 1</h3>
+      <% @grade.courses.each do |course| %>
+      <div class="course_list">
+          <h3><%= course.subject %> // <%= course.period %> Period</h3>
+          <p><%= course.title %></p>
+          <%= link_to "View Course", [@grade, course], :class => "button button_orange" %>
+          <div class="course_links">
+          <%= link_to 'Edit', edit_grade_course_path(@grade, course) %> |
+          <%= link_to 'Destroy', [@grade, course], method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="semester_2">
+      <h3>Semester 2</h3>
+      <% @grade.courses.each do |course| %>
+        <div class="course_list">
+            <h3><%= course.subject %> // <%= course.period %> Period</h3>
+            <p><%= course.title %></p>
+            <%= link_to "View Course", [@grade, course], :class => "button button_orange" %>
+          <div class="course_links">
+            <%= link_to 'Edit', edit_grade_course_path(@grade, course) %> |
+            <%= link_to 'Destroy', [@grade, course], method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+   <div class="create_course">
+  <%= link_to 'Add New Course', new_grade_course_path(@grade, @course), :class => "button button_orange" %>
+</div>
+</div>
 
-<br>
-
-<%= link_to 'New Course', new_course_path %>
+<footer>
+  <div class="wrapper_skinny">
+    <div class="footer_content">
+      <p>Copyright arabecademy 2015</p>
+    </div>
+  </div>
+</footer>

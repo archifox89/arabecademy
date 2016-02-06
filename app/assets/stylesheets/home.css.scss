@@ -1,4 +1,4 @@
-$orange: #ca5c34;
+$orange: #ff8000;
 
 #background {
 	background-image: url(first-image2.jpg);
@@ -17,7 +17,7 @@ $orange: #ca5c34;
 				float: left;
 				color: white;
 				font-weight: 700;
-				font-decoration: none;
+				text-decoration: none;
 				transition: background .2s ease-in-out;
 			}
 			nav {
@@ -58,7 +58,6 @@ $orange: #ca5c34;
 							}
 						}
 						a {
-							background-color: transparent;
 							color: white;
 							text-decoration: none;
 						}

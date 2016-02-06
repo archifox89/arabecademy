@@ -1,3 +1,8 @@
-// Place all the styles related to the Courses controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.course_links {
+	padding: 1rem 0;
+	background: #e6e6e6;
+	a:hover {
+		text-decoration: none;
+	}
+}
+

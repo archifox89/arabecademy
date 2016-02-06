@@ -1,7 +1,12 @@
-$orange: #05785e;
-$blue: #ca5c34;
+$orange: #ff8000;
+$blue: #2eb7b7;
 $dark: #222222;
-// $orange: #ca5c34;
+$navbar-default-bg: #222222;
+$navbar-default-link-color: white;
+
+.form_wrapper {
+	margin: 5rem 0;
+}
 
 .wrapper_wide {
 	width: 90%;
@@ -32,6 +37,10 @@ $dark: #222222;
 	text-align: center;
 }
 
+#notice {
+	margin: 0;
+}
+
 .button {
 	color: white;
 	text-decoration: none;
@@ -42,6 +51,10 @@ $dark: #222222;
 	border: none;
 	display: inline-block;
 	min-width: 17rem;
+	&:hover {
+		text-decoration: none;
+		color: white;
+	}
 }
 
 .button_sm {
@@ -80,6 +93,7 @@ $dark: #222222;
 	    font-weight: 700;
 	    font-decoration: none;
 	    transition: background .2s ease-in-out;
+	    text-decoration: none;
 	  }
 		nav {
 			float: right;
@@ -133,21 +147,21 @@ $dark: #222222;
 }
 
 .banner {
-	background-color: lighten($orange, 7%);
+	background-color: $blue;
 			padding: 7rem 0;
 	h1 {
-		width: 20rem;
+		min-width: 20rem;
 		text-align: center;
 		margin: 0 auto;
-		padding: 2rem 2rem;
-		border-style: solid;
-		border-radius: 5rem;
-		border-width: 0.6rem;
-		border-color: white;
+		// padding: 2rem 2rem;
+		// border-style: solid;
+		// border-radius: 5rem;
+		// border-width: 0.6rem;
+		// border-color: white;
 		font-weight: 700;
-		font-size: 2.5rem;
+		font-size: 3rem;
 		color: white;
-		background-color: lighten($blue, 5%);
+		// background-color: lighten($blue, 5%);
 	}
 }
 

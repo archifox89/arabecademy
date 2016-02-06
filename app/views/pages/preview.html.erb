@@ -1,80 +1,56 @@
-<div class="main_nav_color">
-  <div class="wrapper">
-    <header id="main_header" class="cf">
-      <a href="#" id="logo">arabecademy</a>
-        <nav>
-          <ul>
-            <li>
-              <%= link_to "#" do %>
-                Grade<span class="glyphicon glyphicon-chevron-down"></span>
-              <% end %>
-              <ul>
-                <li>Grade 9</li>
-                <li><%= link_to "Grade 10", pages_grade10_path %></li>
-                <li>Grade 11</li>
-                <li>Grade 12</li>
-              </ul>
-            </li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <% if student_signed_in? %>
-            <li><%= link_to "Log Out", destroy_student_session_path, method: :delete %></li>
-            <li><%= link_to "Accout Settings", edit_student_registration_path %></li>
-            <% else %>
-            <li><%= link_to "Log in", new_student_session_path %></li>
-            <li><%= link_to "Sign Up", new_student_registration_path, :class => "button_sm button_orange" %></li>
-            <% end %>
-          </ul>
-        </nav>
-    </header>
-  </div>
-</div>
+<%= render 'layouts/navbar' %>
 <div class="banner">
   <h1>Math</h1>
 </div>
 <div class="wrapper_skinny">
 	<div class="course_preview">
+
 		<div class="video_content">
 			<h2>Math - Chapter 1 Review</h2>
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/tUAsE4ilOok" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<div class="course_info">
 			<p><strong>Instructor:</strong> Dr.Ahmad Rashed</p>
-			<p><strong>Grade:</strong> 10</p>
+			<p><strong>Grade:</strong><%= @grade.grade_number %></p>
 			<p><strong>Semester:</strong> 1</p>
 			<p><strong>Chapters:</strong> 1-5</p>
 			<p><strong>Duration:</strong> 1 hour</p>
 			<p><strong>Price:</strong> 5 KD</p>
 			<div class="button button_orange">Subscribe</div>
 		</div>
+		<div class="bottom_wrapper">
 			<div class="course_description">
-			<strong>Course Description:</strong><br>
-			<p>Normcore roof party freegan chia chillwave, slow-carb trust fund. Heirloom ennui DIY deep v sriracha yr. Blog XOXO post-ironic synth narwhal. Helvetica ugh 90's, put a bird on it authentic butcher iPhone meditation letterpress bushwick banh mi keffiyeh. Occupy intelligentsia readymade waistcoat. Freegan fashion axe distillery, cold-pressed kickstarter cred artisan mumblecore semiotics authentic meggings readymade farm-to-table. YOLO readymade put a bird on it bespoke, single-origin coffee meh mustache DIY ramps keytar.</p><br>
-			<strong>Syllabus:</strong><br><br>
-			<ol>
-				<strong>Chapter 1</strong>
-				<li>Triangles</li>
-				<li>Squares</li>
-				<li>Circles</li>
-				<li>Rectangles</li>
-				<li>Hexagons</li>
-			</ol>
-			<ol>
-				<strong>Chapter 2</strong>
-				<li>Triangles</li>
-				<li>Squares</li>
-				<li>Circles</li>
-				<li>Rectangles</li>
-				<li>Hexagons</li>
-			</ol>
-			<ol>
-				<strong>Chapter 3</strong>
-				<li>Triangles</li>
-				<li>Squares</li>
-				<li>Circles</li>
-				<li>Rectangles</li>
-				<li>Hexagons</li>
-			</ol>
+				<strong>Course Description:</strong><br>
+				<p>Normcore roof party freegan chia chillwave, slow-carb trust fund. Heirloom ennui DIY deep v sriracha yr. Blog XOXO post-ironic synth narwhal. Helvetica ugh 90's, put a bird on it authentic butcher iPhone meditation letterpress bushwick banh mi keffiyeh. Occupy intelligentsia readymade waistcoat. Freegan fashion axe distillery, cold-pressed kickstarter cred artisan mumblecore semiotics authentic meggings readymade farm-to-table. YOLO readymade put a bird on it bespoke, single-origin coffee meh mustache DIY ramps keytar.</p><br>
+			</div>
+			<div class="syllabus">
+				<strong>Syllabus:</strong><br><br>
+					<ol>
+						<strong>Chapter 1</strong>
+						<li>Triangles</li>
+						<li>Squares</li>
+						<li>Circles</li>
+						<li>Rectangles</li>
+						<li>Hexagons</li>
+					</ol>
+					<ol>
+						<strong>Chapter 2</strong>
+						<li>Triangles</li>
+						<li>Squares</li>
+						<li>Circles</li>
+						<li>Rectangles</li>
+						<li>Hexagons</li>
+					</ol>
+					<ol>
+						<strong>Chapter 3</strong>
+						<li>Triangles</li>
+						<li>Squares</li>
+						<li>Circles</li>
+						<li>Rectangles</li>
+						<li>Hexagons</li>
+					</ol>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

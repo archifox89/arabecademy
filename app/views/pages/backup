@@ -1,14 +1,4 @@
-<div class="section1">
-	<div id="main-image">
-		<%= image_tag("cloud-5.jpg") %>
-	</div>
-</div>
-
-<section class="not-fullscreen">
-    <div class="content-a">
-        <div class="content-b">
-            Centered content
-        </div>
-    </div>
-</section>
+<td><%= link_to 'Show', [@grade, course] %></td>
+<td><%= link_to 'Edit', edit_grade_course_path(@grade, @courses) %></td>
+<td><%= link_to 'Destroy', [@grade, course], method: :delete, data: { confirm: 'Are you sure?' } %></td>
 

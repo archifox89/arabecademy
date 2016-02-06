@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :courses
+  resources :grades do
+    resources :courses
+  end
+
+  
   devise_for :students
   get 'pages/home'
 

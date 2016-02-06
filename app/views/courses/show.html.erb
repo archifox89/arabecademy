@@ -1,29 +1,65 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/navbar' %>
+<div class="banner">
+  <h1><%= @course.title %></h1>
+</div>
+<div class="wrapper_skinny">
+  <div class="course_preview">
+    <div class="top_wrapper">
+      <h2><%= @course.subject %> - Period: <%= @course.period %></h2>
+      <div class="video_content"> 
+        <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_<%= @course.video_url %>" style="height:338px;width:550px">&nbsp;</div>
+      </div>
+      <div class="course_info">
+        <p><strong>Instructor:</strong> <%= @course.instructor %></p>
+        <p><strong>Grade:</strong> <%= @grade.grade_number %></p>
+        <p><strong>Semester:</strong> <%= @course.semester %></p>
+        <p><strong>Chapters:</strong> <%= @course.chapters_from %> - <%= @course.chapters_to %></p>
+        <p><strong>Duration:</strong> 1 hour</p>
+        <p><strong>Price:</strong> <%= @course.price %> KD</p>
+        <div class="button button_orange">Subscribe</div>
+      </div>
+    </div>
+      <div class="course_description">
+      <strong>Course Description:</strong><br>
+      <p><%= @course.description %></p><br>
+      <strong>Syllabus:</strong><br><br>
+      <ol>
+        <strong>Chapter 1</strong>
+        <li>Triangles</li>
+        <li>Squares</li>
+        <li>Circles</li>
+        <li>Rectangles</li>
+        <li>Hexagons</li>
+      </ol>
+      <ol>
+        <strong>Chapter 2</strong>
+        <li>Triangles</li>
+        <li>Squares</li>
+        <li>Circles</li>
+        <li>Rectangles</li>
+        <li>Hexagons</li>
+      </ol>
+      <ol>
+        <strong>Chapter 3</strong>
+        <li>Triangles</li>
+        <li>Squares</li>
+        <li>Circles</li>
+        <li>Rectangles</li>
+        <li>Hexagons</li>
+      </ol>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @course.title %>
-</p>
+<footer>
+  <div class="wrapper_skinny">
+    <div class="footer_content">
+      <p>Copyright arabecademy 2015</p>
+    </div>
+  </div>
+</footer>
 
-<p>
-  <strong>Period:</strong>
-  <%= @course.period %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
 
-<p>
-  <strong>Semester:</strong>
-  <%= @course.semester %>
-</p>
-
-<p>
-  <strong>Grade:</strong>
-  <%= @course.grade %>
-</p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<%= link_to 'Edit', edit_grade_course_path(@grade, @course) %> |
+<%= link_to 'Back', grade_courses_path %>

@@ -1,64 +1,59 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_grade
+  respond_to :html
 
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+   @grades = Grade.all
+   @courses = Course.where grade: params[:grade_id]
+   @courses1 = Course.where grade: params[:grade_id]
+   respond_with(@course)
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
+   respond_with(@course)
   end
 
   # GET /courses/new
   def new
-    @course = Course.new
+    @grade = Grade.find(params[:grade_id])
+    @course = @grade.courses.new
+    respond_with(@course)
   end
 
   # GET /courses/1/edit
   def edit
+
   end
 
   # POST /courses
   # POST /courses.json
   def create
-    @course = Course.new(course_params)
-
-    respond_to do |format|
-      if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
-        format.json { render :show, status: :created, location: @course }
-      else
-        format.html { render :new }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
-      end
+    @grade = Grade.find(params[:grade_id])
+    @course = @grade.courses.build(course_params)
+    if @course.save
+      redirect_to grade_courses_path(@grade, @courses), notice: 'Successfully Created Course'
+    else
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update
-    respond_to do |format|
-      if @course.update(course_params)
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
-        format.json { render :show, status: :ok, location: @course }
-      else
-        format.html { render :edit }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
-      end
-    end
+    @course.update(course_params)
+    redirect_to grade_courses_path(@grade, @courses), :notice => "Successfully Updated Course"
   end
 
   # DELETE /courses/1
   # DELETE /courses/1.json
   def destroy
     @course.destroy
-    respond_to do |format|
-      format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to grade_courses_path(@grade, @courses), :notice => "Successfully Deleted Course"
   end
 
   private
@@ -67,8 +62,12 @@ class CoursesController < ApplicationController
       @course = Course.find(params[:id])
     end
 
+    def set_grade
+      @grade = Grade.find(params[:grade_id])
+    end 
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:title, :period, :description, :semester, :grade)
+      params.require(:course).permit(:title, :period, :description, :semester, :grade, :subject, :grade_id, :chapters_from, :chapters_to, :instructor, :price, :video_url)
     end
 end

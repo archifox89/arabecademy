@@ -1,4 +1,4 @@
-$orange: #05785e;
+$orange: #ff8000;
 $blue: #ca5c34;
 $dark: #222222;
 
@@ -28,25 +28,31 @@ $dark: #222222;
 }
 
 .courses {
-	margin: 4rem auto 7rem auto;
+	margin: 4rem auto 4rem auto;
 	width: 60%;
 	overflow: hidden;
-	.semester_1 {
-		position: relative;
-		float: left;
-		width: 40%;
-		h3 {
-			margin: 0;
-			text-align: center;
+	.semesters {
+		overflow: hidden;
+		.semester_1 {
+			float: left;
+			width: 40%;
+			h3 {
+				margin: 0;
+				text-align: center;
+			}
+		}
+		.semester_2 {
+			float: right;
+			width: 40%;
+			h3 {
+				margin: 0;
+				text-align: center;
+			}
 		}
 	}
-	.semester_2 {
-		float: right;
-		width: 40%;
-		h3 {
-			margin: 0;
-			text-align: center;
-		}
+	.create_course {
+		margin-top: 4rem;
+		text-align: center;
 	}
 }
 
@@ -67,5 +73,19 @@ $dark: #222222;
 			}
 			.button {
 				margin-bottom: 3rem;
+				color: white;
+				text-decoration: none;
 			}
 		}
+
+.course_links {
+	padding: 1rem 0;
+	background: #e6e6e6;
+	a:hover {
+		text-decoration: none;
+	}
+}
+
+
+
+

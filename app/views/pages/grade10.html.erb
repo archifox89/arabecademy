@@ -1,35 +1,4 @@
-
-<div class="main_nav_color">
-  <div class="wrapper">
-    <header id="main_header" class="cf">
-      <a href="#" id="logo">arabecademy</a>
-        <nav>
-          <ul>
-            <li>
-              <%= link_to "#" do %>
-                Grade<span class="glyphicon glyphicon-chevron-down"></span>
-              <% end %>
-              <ul>
-                <li>Grade 9</li>
-                <li><%= link_to "Grade 10", pages_grade10_path %></li>
-                <li>Grade 11</li>
-                <li>Grade 12</li>
-              </ul>
-            </li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <% if student_signed_in? %>
-            <li><%= link_to "Log Out", destroy_student_session_path, method: :delete %></li>
-            <li><%= link_to "Accout Settings", edit_student_registration_path %></li>
-            <% else %>
-            <li><%= link_to "Log in", new_student_session_path %></li>
-            <li><%= link_to "Sign Up", new_student_registration_path, :class => "button_sm button_orange" %></li>
-            <% end %>
-          </ul>
-        </nav>
-    </header>
-  </div>
-</div>
+<%= render 'navbar/layouts' %>
 
 <div class="banner">
   <h1>Grade 10</h1>

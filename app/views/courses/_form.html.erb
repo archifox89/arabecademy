@@ -1,4 +1,4 @@
-<%= form_for(@course) do |f| %>
+<%= bootstrap_form_for [@grade, @course] do |f| %>
   <% if @course.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
@@ -12,26 +12,38 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :period %><br>
-    <%= f.text_field :period %>
+    <%= f.select :subject, [["Math"], ["Physics"], ["Chemistry"], ["Science"], ["Biology"], ["English"], ["Arabic"], ["Social Studies"]], { label: "Subject"}, { class: "selectpicker" } %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.text_field :instructor %>
+  </div>
+  <div class="field">
+    <%= f.select :period, [["First"], ["Second"], ["Third"], ["Final"]], { label: "Period"}, { class: "selectpicker" } %>
+  </div>
+  <div class="field">
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :semester %><br>
-    <%= f.text_field :semester %>
+    <%= f.select :semester, [["First"], ["Second"]], { label: "Semester"}, { class: "selectpicker" } %>
   </div>
-    <div class="field">
-    <%= f.label :grade %><br>
-    <%= f.number_field :grade %>
+  <div class="field">
+    <%= f.number_field :chapters_from %>
+  </div>
+  <div class="field">
+    <%= f.number_field :chapters_to %>
+  </div>
+  <div class="field">
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.text_field :video_url, label: "Video ID" %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+

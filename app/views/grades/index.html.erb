@@ -1,0 +1,22 @@
+<%= render 'layouts/navbar' %>
+<div class="wrapper_skinny">
+  <h1>Listing Grades</h1>
+  <div id="grade_list">
+    <ul class="list-group">
+      <% @grades.each do |grade| %>
+        <li class="list-group-item">
+          <strong><%= link_to "Grade " + grade.grade_number, grade_courses_path(grade, @course)%></strong>
+          <div class="grade_links">
+            <%= link_to 'Add New Course', new_grade_course_path(grade, @course) %> |
+            <%= link_to 'Edit', edit_grade_path(grade) %> |
+            <%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<!-- 
+<%= link_to 'New Grade', new_grade_path %> -->
+</div>
+
+
