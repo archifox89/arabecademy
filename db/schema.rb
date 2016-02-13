@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216104328) do
+ActiveRecord::Schema.define(version: 20160213111704) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "title"
@@ -20,16 +20,15 @@ ActiveRecord::Schema.define(version: 20151216104328) do
     t.string   "semester"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "subject"
     t.integer  "grade_id"
-    t.string   "instructor"
-    t.string   "chapters_from"
-    t.string   "chapters_to"
-    t.integer  "price"
     t.string   "video_url"
+    t.integer  "subject_id"
+    t.integer  "instructor_id"
   end
 
   add_index "courses", ["grade_id"], name: "index_courses_on_grade_id"
+  add_index "courses", ["instructor_id"], name: "index_courses_on_instructor_id"
+  add_index "courses", ["subject_id"], name: "index_courses_on_subject_id"
 
   create_table "grades", force: :cascade do |t|
     t.string   "grade_number"
@@ -37,7 +36,7 @@ ActiveRecord::Schema.define(version: 20151216104328) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "students", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -52,7 +51,7 @@ ActiveRecord::Schema.define(version: 20151216104328) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "students", ["email"], name: "index_students_on_email", unique: true
-  add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
