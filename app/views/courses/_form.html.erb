@@ -15,12 +15,6 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.select :subject, [["Math"], ["Physics"], ["Chemistry"], ["Science"], ["Biology"], ["English"], ["Arabic"], ["Social Studies"]], { label: "Subject"}, { class: "selectpicker" } %>
-  </div>
-  <div class="field">
-    <%= f.text_field :instructor %>
-  </div>
-  <div class="field">
     <%= f.select :period, [["First"], ["Second"], ["Third"], ["Final"]], { label: "Period"}, { class: "selectpicker" } %>
   </div>
   <div class="field">
@@ -28,15 +22,6 @@
   </div>
   <div class="field">
     <%= f.select :semester, [["First"], ["Second"]], { label: "Semester"}, { class: "selectpicker" } %>
-  </div>
-  <div class="field">
-    <%= f.number_field :chapters_from %>
-  </div>
-  <div class="field">
-    <%= f.number_field :chapters_to %>
-  </div>
-  <div class="field">
-    <%= f.number_field :price %>
   </div>
   <div class="field">
     <%= f.text_field :video_url, label: "Video ID" %>

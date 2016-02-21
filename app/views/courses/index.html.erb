@@ -4,7 +4,7 @@
   <h1>Grade <%= @grade.grade_number %></h1>
 </div>
 
-<div class="sub_nav_color">
+<!-- <div class="sub_nav_color">
   <div class="wrapper">
       <nav>
         <ul>
@@ -19,38 +19,24 @@
         </ul>
       </nav>
   </div>
-</div>
+</div> -->
 
 <div class="courses">
   <div class="semesters">
-    <div class="semester_1">
-      <h3>Semester 1</h3>
-      <% @grade.courses.each do |course| %>
+    <h3>Courses</h3>
+    <% @grade.courses.each do |course| %>
+    <div class="course_group">
       <div class="course_list">
-          <h3><%= course.subject %> // <%= course.period %> Period</h3>
-          <p><%= course.title %></p>
-          <%= link_to "View Course", [@grade, course], :class => "button button_orange" %>
-          <div class="course_links">
-          <%= link_to 'Edit', edit_grade_course_path(@grade, course) %> |
-          <%= link_to 'Destroy', [@grade, course], method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
-      </div>
-      <% end %>
-    </div>
-    <div class="semester_2">
-      <h3>Semester 2</h3>
-      <% @grade.courses.each do |course| %>
-        <div class="course_list">
-            <h3><%= course.subject %> // <%= course.period %> Period</h3>
-            <p><%= course.title %></p>
-            <%= link_to "View Course", [@grade, course], :class => "button button_orange" %>
-          <div class="course_links">
-            <%= link_to 'Edit', edit_grade_course_path(@grade, course) %> |
-            <%= link_to 'Destroy', [@grade, course], method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
+        <h3>Subject</h3>
+        <p><%= course.title %></p>
+        <%= link_to "View Course", [@grade, course], :class => "button button_orange" %>
+        <div class="course_links">
+        <%= link_to 'Edit', edit_grade_course_path(@grade, course) %> |
+        <%= link_to 'Destroy', [@grade, course], method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
-      <% end %>
-    </div>
+      </div>
+      </div>
+    <% end %>
   </div>
    <div class="create_course">
   <%= link_to 'Add New Course', new_grade_course_path(@grade, @course), :class => "button button_orange" %>

@@ -3,17 +3,13 @@ class CoursesController < ApplicationController
   before_action :set_grade
   respond_to :html
 
-  # GET /courses
-  # GET /courses.json
   def index
-   @grades = Grade.all
-   @courses = Course.where grade: params[:grade_id]
-   @courses1 = Course.where grade: params[:grade_id]
-   respond_with(@course)
+   @grade = Grade.find(params[:grade_id])
+   @courses = @grade.courses.all
+   # respond_with(@course)
   end
 
-  # GET /courses/1
-  # GET /courses/1.json
+  
   def show
    respond_with(@course)
   end
@@ -68,6 +64,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:title, :period, :description, :semester, :grade, :subject, :grade_id, :chapters_from, :chapters_to, :instructor, :price, :video_url)
+      params.require(:course).permit(:title, :period, :description, :semester, :grade, :grade_id, :video_url)
     end
 end

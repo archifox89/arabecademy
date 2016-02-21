@@ -1,0 +1,67 @@
+	<div class="full_sidebar">
+		<div class="logo_container">
+			<div class="logo_wrapper">
+				<div class="logo">
+					<a href="#" id="logo_text">arabecademy</a>
+				</div>
+			</div>
+		</div>
+		<div class="side_nav">
+			<ul>
+<!-- 				<li><a href="#">My Projects</a></li>
+				<li><a href="#">All Projects</a></li> -->
+				<li class="active_sidenav"><a href="#">Courses</a></li>
+				<li class="space_filler"><a href="#"></a></li> 
+			</ul>
+		</div>
+	</div>
+	<div class="full_content">
+			<div class="fixed_content">
+				<div class="top_nav">
+					<nav>
+						<ul>
+						<!-- 	<li><a href="#">Calendar</a></li>
+							<li><a href="#">Messages</a></li> -->
+							<li class="log_out">  <%= link_to destroy_user_session_path, method: :delete do %>
+						    <span>
+						      <i class="fa fa-power-off" data-toggle="tooltip" data-placement="right" title="Log Out"></i>
+						    </span>
+						  <% end %>
+							</li>
+							<li><a href="#"><%= image_tag ('user.png') %>Rashed Aljulaibi (admin panel)<i class="fa fa-chevron-down"></i></a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="heading">
+					<div class="top_heading">
+						<h1 class="main_title">Grade 10</h1><!-- <h1 class="arabic">مراحل المشروع الاساسية</h1> -->
+					</div>
+					<div class="sub_navbar">
+						<nav>
+							<ul>
+								<li><a href="#">all</a></li>
+								<li><a href="#">grade 10</a></li>
+								<li><a href="#">grade 11</a></li>
+								<li><a href="#">grade 12</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div class="fix">
+			<div class="main_content">
+				<div class="content_container">
+					<div class="content_title">
+						<h2>Pre-Design Stage Main Steps</h2><h2 class="arabic">مراحل المشروع ما قبل التصميم</h2>
+					</div>
+					<div class="content_info">
+						<ul>
+							<li><div class="number">1</div><p>طلب المشروع من قبل الجهة المستفيدة</p><div class="download"><a href="#" class="disabled"><i class="fa fa-download"></i></a></div></li>
+							<li class="list_highlight"><div class="number">2</div><p>جود قرار تخصيص موقع من قبل المجلس البلدي</p><div class="download"><a href="#" class="disabled"><i class="fa fa-download"></i></a></div></li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

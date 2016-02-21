@@ -3,54 +3,19 @@
   <h1><%= @course.title %></h1>
 </div>
 <div class="wrapper_skinny">
-  <div class="course_preview">
-    <div class="top_wrapper">
-      <h2><%= @course.subject %> - Period: <%= @course.period %></h2>
-      <div class="video_content"> 
-        <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_<%= @course.video_url %>" style="height:338px;width:550px">&nbsp;</div>
-      </div>
-      <div class="course_info">
-        <p><strong>Instructor:</strong> <%= @course.instructor %></p>
-        <p><strong>Grade:</strong> <%= @grade.grade_number %></p>
-        <p><strong>Semester:</strong> <%= @course.semester %></p>
-        <p><strong>Chapters:</strong> <%= @course.chapters_from %> - <%= @course.chapters_to %></p>
-        <p><strong>Duration:</strong> 1 hour</p>
-        <p><strong>Price:</strong> <%= @course.price %> KD</p>
-        <div class="button button_orange">Subscribe</div>
-      </div>
-    </div>
-      <div class="course_description">
-      <strong>Course Description:</strong><br>
-      <p><%= @course.description %></p><br>
-      <strong>Syllabus:</strong><br><br>
-      <ol>
-        <strong>Chapter 1</strong>
-        <li>Triangles</li>
-        <li>Squares</li>
-        <li>Circles</li>
-        <li>Rectangles</li>
-        <li>Hexagons</li>
-      </ol>
-      <ol>
-        <strong>Chapter 2</strong>
-        <li>Triangles</li>
-        <li>Squares</li>
-        <li>Circles</li>
-        <li>Rectangles</li>
-        <li>Hexagons</li>
-      </ol>
-      <ol>
-        <strong>Chapter 3</strong>
-        <li>Triangles</li>
-        <li>Squares</li>
-        <li>Circles</li>
-        <li>Rectangles</li>
-        <li>Hexagons</li>
-      </ol>
-    </div>
-  </div>
+<% @course.chapters.each do |chapter| %>
+      <tr>
+        <td><%= chapter.title %></td>
+        <td><%= chapter.description %></td>
+        <td><%= chapter.course_id %></td>
+        <td><%= link_to 'Show', [@course, chapter] %></td>
+        <td><%= link_to 'Edit', edit_course_chapter_path(@course,chapter) %></td>
+        <td><%= link_to 'Destroy', [@course, chapter], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
 </div>
 
+<%= link_to "Add Chapter", new_course_chapter_path(@course) %>
 <footer>
   <div class="wrapper_skinny">
     <div class="footer_content">

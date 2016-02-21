@@ -13,6 +13,9 @@ class PagesController < ApplicationController
   def course_show
   end
 
+  def dashboard
+  end
+
   def about
   end
 end
