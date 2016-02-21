@@ -1,26 +1,8 @@
-<%= render 'layouts/navbar' %><br><br>
-<div class="wrapper_skinny">
-	<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-	<p>
-	  <strong>Title:</strong>
-	  <%= @chapter.title %>
-	</p>
+<h1>Listing Lessons</h1>
 
-	<p>
-	  <strong>Description:</strong>
-	  <%= @chapter.description %>
-	</p>
-
-	<p>
-	  <strong>Course:</strong>
-	  <%= @chapter.course_id %>
-	</p>
-
-	<%= link_to 'Edit', edit_course_chapter_path(@course, @chapter) %> |
-	<%= link_to 'Back', grade_course_path(@course.grade, @course) %>
-	
-	<table>
+<table>
   <thead>
     <tr>
       <th>Title</th>
@@ -33,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @chapter.lessons.each do |lesson| %>
+    <% @lessons.each do |lesson| %>
       <tr>
         <td><%= lesson.title %></td>
         <td><%= lesson.description %></td>
@@ -47,10 +29,8 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to "Add Lesson", new_chapter_lesson_path(@chapter) %>
 
-</div>
+<br>
 
-
-
-
+<%= link_to 'New Lesson', new_chapter_lesson_path %>
+<%= link_to 'Back', course_chapter_path(@chapter.course, @chapter) %>

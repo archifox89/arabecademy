@@ -1,30 +1,28 @@
 <%= render 'layouts/navbar' %>
-<div class="banner">
-  <h1><%= @course.title %></h1>
-</div>
+<!-- <div class="banner"> -->
+  <!-- 
+</div> -->
 <div class="wrapper_skinny">
-<% @course.chapters.each do |chapter| %>
-      <tr>
-        <td><%= chapter.title %></td>
-        <td><%= chapter.description %></td>
-        <td><%= chapter.course_id %></td>
-        <td><%= link_to 'Show', [@course, chapter] %></td>
-        <td><%= link_to 'Edit', edit_course_chapter_path(@course,chapter) %></td>
-        <td><%= link_to 'Destroy', [@course, chapter], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <h1><%= @course.title %></h1>
+  <% @course.chapters.each do |chapter| %>
+    <%= chapter.title %>
+    <%= link_to 'Show', [@course, chapter] %>
+    <%= link_to 'Edit', edit_course_chapter_path(@course,chapter) %>
+    <%= link_to 'Destroy', [@course, chapter], method: :delete, data: { confirm: 'Are you sure?' } %><br><br>
+  <% end %><br>
+    <%= link_to 'Back', grade_courses_path %><br><br>
+    <%= link_to "Add Chapter", new_course_chapter_path(@course) %>
 </div>
 
-<%= link_to "Add Chapter", new_course_chapter_path(@course) %>
-<footer>
+
+<!-- <footer>
   <div class="wrapper_skinny">
     <div class="footer_content">
       <p>Copyright arabecademy 2015</p>
     </div>
   </div>
-</footer>
+</footer> -->
 
 
 
-<%= link_to 'Edit', edit_grade_course_path(@grade, @course) %> |
-<%= link_to 'Back', grade_courses_path %>
+

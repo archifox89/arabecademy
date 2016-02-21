@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
 
-  
+
   devise_for :users
+  
   resources :grades do
     resources :courses 
   end
 
   resources :courses do
     resources :chapters 
+  end
+
+  resources :chapters do
+    resources :lessons 
   end
 
   root "pages#home"
