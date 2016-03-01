@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
   before_action :set_grade
+  load_and_authorize_resource
   respond_to :html
 
   def index
@@ -64,6 +65,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:title, :period, :description, :semester, :grade, :grade_id, :video_url)
+      params.require(:course).permit(:title, :period, :description, :semester, :grade, :grade_id, :video_url, :chapter_id)
     end
 end

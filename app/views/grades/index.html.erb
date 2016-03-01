@@ -7,16 +7,23 @@
         <li class="list-group-item">
           <strong><%= link_to "Grade " + grade.grade_number, grade_courses_path(grade, @course)%></strong>
           <div class="grade_links">
-            <%= link_to 'Add New Course', new_grade_course_path(grade, @course) %> |
-            <%= link_to 'Edit', edit_grade_path(grade) %> |
-            <%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% if can? :create, @course %>
+              <%= link_to 'Add New Course', new_grade_course_path(grade, @course) %> |
+            <% end %>
+            <% if can? :update, @grade %>
+              <%= link_to 'Edit', edit_grade_path(grade) %> |
+            <% end %>
+            <% if can? :destroy, @grade %>
+              <%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
         </div>
         </li>
       <% end %>
     </ul>
   </div>
-<!-- 
-<%= link_to 'New Grade', new_grade_path %> -->
+<% if can? :create, @grade %>
+  <%= link_to 'New Grade', new_grade_path %>
+<% end %>
 </div>
 
 

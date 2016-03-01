@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  
   devise_for :users
   
   resources :grades do
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :courses do
     resources :chapters 
+    resources :packages
   end
 
   resources :chapters do

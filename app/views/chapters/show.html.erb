@@ -16,8 +16,9 @@
 	  <strong>Course:</strong>
 	  <%= @chapter.course_id %>
 	</p>
-
-	<%= link_to 'Edit', edit_course_chapter_path(@course, @chapter) %> |
+  <% if can? :update, @chapter %>
+  	<%= link_to 'Edit', edit_course_chapter_path(@course, @chapter) %> |
+  <% end %>
 	<%= link_to 'Back', grade_course_path(@course.grade, @course) %>
 	
 	<table>
@@ -41,14 +42,19 @@
         <td><%= lesson.video_url %></td>
         <td><%= lesson.chapter_id %></td>
         <td><%= link_to 'Show', [@chapter, lesson] %></td>
-        <td><%= link_to 'Edit', edit_chapter_lesson_path(@chapter, lesson) %></td>
-        <td><%= link_to 'Destroy', [@chapter, lesson], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can? :update, @lesson %>
+          <td><%= link_to 'Edit', edit_chapter_lesson_path(@chapter, lesson) %></td>
+        <% end %>
+        <% if can? :destroy, @lesson %>
+          <td><%= link_to 'Destroy', [@chapter, lesson], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to "Add Lesson", new_chapter_lesson_path(@chapter) %>
-
+<% if can? :create, @lesson %>
+  <%= link_to "Add Lesson", new_chapter_lesson_path(@chapter) %>
+<% end %>
 </div>
 
 

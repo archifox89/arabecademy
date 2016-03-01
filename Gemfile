@@ -14,6 +14,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'bootstrap_form'
+gem 'cancancan', '~> 1.10'
+gem 'rolify'
 
  gem 'capistrano-rails', group: :development
 

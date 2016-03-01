@@ -1,7 +1,6 @@
 class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
-  # before_action :set_course
-
+  load_and_authorize_resource
 
   
   def index
@@ -54,12 +53,8 @@ class ChaptersController < ApplicationController
       @chapter = Chapter.find(params[:id])
     end
 
-    # def set_course
-    #   @course = Course.find(params[:course_id])
-    # end
-
 
     def chapter_params
-      params.require(:chapter).permit(:title, :description, :course_id)
+      params.require(:chapter).permit(:title, :description, :course_id, chapter_ids: [], package_ids: [])
     end
 end

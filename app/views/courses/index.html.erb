@@ -31,22 +31,28 @@
         <p><%= course.title %></p>
         <%= link_to "View Course", [@grade, course], :class => "button button_orange" %>
         <div class="course_links">
-        <%= link_to 'Edit', edit_grade_course_path(@grade, course) %> |
-        <%= link_to 'Destroy', [@grade, course], method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% if can? :update, @course %>
+          <%= link_to 'Edit', edit_grade_course_path(@grade, course) %> |
+        <% end %>
+        <% if can? :destroy, @course %>
+          <%= link_to 'Destroy', [@grade, course], method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
         </div>
       </div>
       </div>
     <% end %>
   </div>
-   <div class="create_course">
+  <div class="create_course">
+  <% if can? :create, @course %>
   <%= link_to 'Add New Course', new_grade_course_path(@grade, @course), :class => "button button_orange" %>
+  <% end %>
 </div>
 </div>
 
-<footer>
+<!-- <footer>
   <div class="wrapper_skinny">
     <div class="footer_content">
       <p>Copyright arabecademy 2015</p>
     </div>
   </div>
-</footer>
+</footer> -->

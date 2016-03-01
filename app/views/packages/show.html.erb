@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @package.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @package.price %>
+</p>
+
+<p>
+  <strong>Included Chapters</strong><br>
+<% @package.chapters.each do |chapter| %>
+  <%= chapter.title %><br>
+<% end %>
+</p>
+
+<% if can? :update, @package %>
+	<%= link_to 'Edit', edit_course_package_path(@course, @package) %> |
+<% end %>
+<%= link_to 'Back', course_packages_path(@course, @packages) %>
